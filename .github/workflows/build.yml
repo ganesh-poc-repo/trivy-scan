@@ -18,8 +18,11 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'ganesh-poc-repo/trivy-scan:latest'
-          #format: 'table'
-          format: '@contrib/html.tpl'
+          format: 'table'
+          #dependency-tree: ''
+          #format: '@contrib/html.tpl'
           ignore-unfixed: true
-          vuln-type: 'os,library'
-          severity: 'CRITICAL,HIGH'
+          args: --format template --template "@contrib/html.tpl" -o report.html
+          #vuln-type: 'os,library'
+          #severity: 'CRITICAL,HIGH'
+          
