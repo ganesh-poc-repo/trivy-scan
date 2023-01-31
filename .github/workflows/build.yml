@@ -24,6 +24,7 @@ jobs:
           format:  'github'
           #output: 'trivy-results.sarif'
           output: 'dependency-results.sbom.json'
+          github-pat: ./trivy-reports/
           severity: 'CRITICAL,HIGH'
           #format: 'table'
           #dependency-tree: ''
